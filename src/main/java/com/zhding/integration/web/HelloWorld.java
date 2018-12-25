@@ -12,6 +12,6 @@ public class HelloWorld {
     // @RequestMapping(value = "/helloworld", method = RequestMethod.GET)
     @GetMapping("/helloworld")
     public String sayHelloWorld() {
-        return "Hello World ! run with JRebel!";
+        return "Hello World! run with JRebel!";
     }
 }
