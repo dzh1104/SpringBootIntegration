@@ -3,8 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd" >
+        
+<!--         <bean id="moocApplicationContext" class="com.imooc.aware.MoocApplicationContext" ></bean> -->
 
-        <!--单例-->
-        <bean id="beanScope" class="com.zhding.integration.spring.bean.BeanScope" scope="singleton"></bean>
+	<bean id="moocBeanName" class="com.zhding.integration.spring.aware.MoocBeanName" ></bean>
         
  </beans>
