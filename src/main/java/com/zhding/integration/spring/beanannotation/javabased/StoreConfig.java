@@ -79,6 +79,7 @@ public IntegerStore integerStore() {
 
 @Bean(name = "stringStoreTest")
 //用 Store 也会报错，用 StringStore 也报错
+//@Bean是按着类型来注入对象的，多个同类型的Bean，就会导致错误： expected single matching bean but found 2: stringStore,stringStoreTest
 //public Store stringStoreTest() {
 public DoubleStore stringStoreTest() {
 
