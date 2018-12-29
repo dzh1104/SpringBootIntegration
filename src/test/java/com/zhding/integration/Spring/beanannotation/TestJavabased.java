@@ -14,6 +14,7 @@ public class TestJavabased extends UnitTestBase {
 	public TestJavabased() {
 //		super("classpath*:spring-beanannotation.xml");
 
+//		配合使用 xml配置 获取外部资源
 		super("classpath*:config.xml");
 	}
 	
@@ -29,7 +30,7 @@ public class TestJavabased extends UnitTestBase {
 //		System.out.println(manager.getClass().getName());
 
 //	    配合使用 config.xml 使用xml文件去使用配置
-		StoreConfig manager = super.getBean("dataSource");
+		StoreConfig manager = super.getBean("storeConfig");
 		System.out.println(manager.myDriverManager().getClass().getName());
 	}
 	

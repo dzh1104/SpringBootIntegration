@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: prod
+jdbc:
+  username: root-yml
+  password: root-yml
+  url: 127.0.0.1-yml

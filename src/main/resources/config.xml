@@ -7,11 +7,25 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd" >
         
+    <!--点击location 看到如下源码，只支持properties文件，无法读取yml文件的内容-->
+    <!--
+        <xsd:attribute name="location" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[
+	The location of the properties file to resolve placeholders against, as a Spring
+	resource location: a URL, a "classpath:" pseudo URL, or a relative file path.
+	Multiple locations may be specified, separated by commas. If neither location nor
+	properties-ref is specified, placeholders will be resolved against system properties.
+				]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+    -->
     <context:property-placeholder location="classpath:/config.properties"/>
+    <!--<context:property-placeholder location="classpath:/application.yml"/>-->
 
-    <bean id="dataSource" class="com.zhding.integration.spring.beanannotation.javabased.StoreConfig">
-        <property name="url" value="${url}" />
+    <bean id="storeConfig" class="com.zhding.integration.spring.beanannotation.javabased.StoreConfig">
+        <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
-        <property name="password" value="${password}" />
+        <property name="password" value="${jdbc.password}" />
     </bean>
 </beans>
