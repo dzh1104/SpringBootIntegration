@@ -1,20 +1,23 @@
 package com.zhding.integration.spring.beanannotation.javabased;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Component;
 
 @Configuration
 @ImportResource("classpath:config.xml")
+@Component
 public class StoreConfig {
 
-//	@Value("${url}")
+////	@Value("${url}")
 private String url;
-
-//	@Value("${jdbc.username}")
+//
+////	@Value("${jdbc.username}")
 private String username;
-
-//	@Value("${password}")
+//
+////	@Value("${password}")
 private String password;
 
 public void setUrl(String url) {
@@ -35,6 +38,7 @@ public void setPassword(String password) {
 @Bean
 public MyDriverManager myDriverManager() {
 
+	System.out.println("注册Bean: myDriverManager");
 	return new MyDriverManager(url, username, password);
 }
 
@@ -46,34 +50,41 @@ public MyDriverManager myDriverManager() {
 
 
 //@Bean(name = "stringStore")
-//@Bean // 如果不加name
-//	@Scope(value="prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+//// @Bean // 如果不加name，取方法名作为标识
+//@Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 //public Store getStringStore() {
 //
 //	return new StringStore();
 //}
 
-//	@Autowired
-//	private Store<String> s1;
-//
-//	@Autowired
-//	private Store<Integer> s2;
-//
-//	@Bean
-//	public StringStore stringStore() {
-//		return new StringStore();
-//	}
-//
-//	@Bean
-//	public IntegerStore integerStore() {
-//		return new IntegerStore();
-//	}
+@Autowired
+private Store<String> s1;
 
-//	@Bean(name = "stringStoreTest")
-//	public Store stringStoreTest() {
-//		System.out.println("s1 : " + s1.getClass().getName());
-//		System.out.println("s2 : " + s2.getClass().getName());
-//		return new StringStore();
-//	}
+@Autowired
+private Store<Integer> s2;
+
+@Bean
+public StringStore stringStore() {
+
+	System.out.println("注册Bean: stringStore");
+	return new StringStore();
+}
+
+@Bean
+public IntegerStore integerStore() {
+
+	System.out.println("注册Bean: integerStore");
+	return new IntegerStore();
+}
+
+@Bean(name = "stringStoreTest")
+//用 Store 也会报错，用 StringStore 也报错
+//public Store stringStoreTest() {
+public DoubleStore stringStoreTest() {
+
+	System.out.println("s1 : " + s1.getClass().getName());
+	System.out.println("s2 : " + s2.getClass().getName());
+	return new DoubleStore();
+}
 
 }
