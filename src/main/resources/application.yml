@@ -1,7 +1,26 @@
 spring:
   profiles:
-    active: prod
+    active: dev
 jdbc:
   username: root-yml
   password: root-yml
   url: 127.0.0.1-yml
+server:
+  port: 8082
+
+# 使用 --- 作为区分
+---
+spring:
+  profiles: dev
+server:
+  port: 8083
+  servlet:
+    context-path: /dev
+
+---
+spring:
+  profiles: prod
+server:
+  port: 8084
+  servlet:
+    context-path: /prod

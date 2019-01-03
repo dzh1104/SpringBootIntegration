@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Configuration
 @ImportResource("classpath:config.xml")
 @Component
-public class StoreConfig {
+public class StoreConfigA {
 
 ////	@Value("${url}")
 private String url;

@@ -1,7 +1,7 @@
 package com.zhding.integration.Spring.beanannotation;
 
 import com.zhding.integration.spring.beanannotation.javabased.Store;
-import com.zhding.integration.spring.beanannotation.javabased.StoreConfig;
+import com.zhding.integration.spring.beanannotation.javabased.StoreConfigA;
 import com.zhding.integration.util.UnitTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,7 +29,7 @@ public class TestJavabased extends UnitTestBase {
 //		System.out.println(manager.getClass().getName());
 
 //	    配合使用 config.xml 使用xml文件去使用配置
-		StoreConfig manager = super.getBean("storeConfig");
+		StoreConfigA manager = super.getBean("storeConfigA");
 //		System.out.println(manager.myDriverManager().getClass().getName());
 	}
 	

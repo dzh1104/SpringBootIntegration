@@ -27,7 +27,7 @@
     <context:property-placeholder location="classpath:/config.properties"/>
     <!--<context:property-placeholder location="classpath:/application.yml"/>-->
 
-    <bean id="storeConfig" class="com.zhding.integration.spring.beanannotation.javabased.StoreConfig">
+    <bean id="storeConfig" class="com.zhding.integration.spring.beanannotation.javabased.StoreConfigA">
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
